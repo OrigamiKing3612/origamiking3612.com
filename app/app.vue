@@ -1,14 +1,11 @@
 <template>
-    <div class="profile">
-        <header>
-            <h1>Hi there! I'm <span class="highlight">OrigamiKing3612</span></h1>
-            <p>
-                I built
-                <NuxtLink to="https://github.com/OrigamiKing3612/Terminal-Kingdom" external>Terminal Kingdom</NuxtLink>
-                and
-                <NuxtLink to="https://the-house-app.com" external>The House App</NuxtLink>.
-            </p>
-        </header>
+    <Card title="I'm OrigamiKing3612">
+        <p>
+            I built
+            <NuxtLink to="https://github.com/OrigamiKing3612/Terminal-Kingdom" external>Terminal Kingdom</NuxtLink>
+            and
+            <NuxtLink to="https://the-house-app.com" external>The House App</NuxtLink>.
+        </p>
 
         <section>
             <h2>Some of my projects</h2>
@@ -53,7 +50,7 @@
                 <li><strong>Tools:</strong> Neovim, Nuxt 4, Obsidian</li>
             </ul>
         </section>
-    </div>
+    </Card>
 </template>
 
 <script setup lang="ts">
@@ -61,43 +58,43 @@
 </script>
 
 <style scoped lang="scss">
-.profile {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: system-ui, sans-serif;
-    line-height: 1.6;
+@use "@/assets/styles/main.scss" as *;
 
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-
-        .highlight {
-            color: #4f46e5; // accent color
-        }
-    }
-
-    h2 {
-        margin-top: 2rem;
-        font-size: 1.4rem;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 0.25rem;
-    }
-
-    p {
-        margin: 0.5rem 0 1rem;
-    }
-
-    ul {
-        padding-left: 1.2rem;
-
-        li {
-            margin: 0.4rem 0;
-        }
-    }
-
-    .projects li a {
-        font-weight: 600;
-    }
-}
-</style>
+// .profile {
+//     max-width: 800px;
+//     margin: 0 auto;
+//     font-family: system-ui, sans-serif;
+//     line-height: 1.6;
+//
+//     h1 {
+//         font-size: 2rem;
+//         margin-bottom: 0.5rem;
+//
+//         .highlight {
+//             color: var(--primary);
+//         }
+//     }
+//
+//     h2 {
+//         margin-top: 2rem;
+//         font-size: 1.4rem;
+//         border-bottom: 2px solid #ddd;
+//         padding-bottom: 0.25rem;
+//     }
+//
+//     p {
+//         margin: 0.5rem 0 1rem;
+//     }
+//
+//     ul {
+//         padding-left: 1.2rem;
+//
+//         li {
+//             margin: 0.4rem 0;
+//         }
+//     }
+//
+//     .projects li a {
+//         font-weight: 600;
+//     }
+// }</style>

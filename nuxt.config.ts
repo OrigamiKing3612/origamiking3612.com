@@ -53,7 +53,10 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: ``
+                    additionalData: `
+                        @use "@/assets/styles/lib/_variables.scss" as *;
+                        @use "@/assets/styles/lib/_colors.scss" as *;
+                    `
                 }
             }
         }
@@ -70,6 +73,14 @@ export default defineNuxtConfig({
     },
     robots: {
         sitemap: '/sitemap.xml',
+    },
+    experimental: {
+        defaults: {
+            nuxtLink: {
+                activeClass: 'router-link-active',
+                exactActiveClass: 'router-link-exact-active',
+            }
+        }
     }
 })
 
