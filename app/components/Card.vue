@@ -26,10 +26,12 @@ const padding_top = computed(() => {
     padding: v-bind(padding_top) 0px 20px 0px;
     background: var(--card-background);
     border-radius: 1rem;
-    margin: 1.5rem 0;
+    margin: .5rem 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--card-border);
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    max-width: 700px;
+    width: 100%;
 
     &:hover {
         transform: translateY(-4px);

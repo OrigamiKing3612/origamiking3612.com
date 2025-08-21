@@ -2,20 +2,6 @@
 @use "./lib/_colors.scss" as *;
 @use "./lib/_variables.scss" as *;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-.link,
-label,
-div {
-  color: var(--text);
-}
-
-
 :global(html) {
   background-color: var(--main-background) !important;
   font-family: system-ui, sans-serif;
@@ -38,15 +24,9 @@ h5 {
   -webkit-text-fill-color: transparent;
 }
 
-a,
-.nuxt-link {
-  color: var(--primary);
-  font-weight: 700;
-  margin: 1.2rem 0 0.8rem;
-  background: var(--link-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.link {
+  color: var(--text);
+  text-decoration: none;
 }
 
 ul {
