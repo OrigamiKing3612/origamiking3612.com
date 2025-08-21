@@ -2,7 +2,7 @@
     <NuxtLink :to="props.link" external class="link">
         <Card :title="name">
             <div class="project-card">
-                <img :src="props.image" :alt="`${props.name} Preview Image`" class="image" />
+                <NuxtImg :src="props.image" :alt="`${props.name} Preview Image`" class="image" />
                 <div class="content">
                     <span class="description">{{ props.description }}</span>
                 </div>

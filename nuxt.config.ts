@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 const title = "OrigamiKing3612";
-const description = "OrigamiKing3612's personal website"
+const description = "OrigamiKing3612's Portfolio"
 
 export default defineNuxtConfig({
     future: {
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         logLevel: 3,
     },
     ssr: true,
-    modules: ["@nuxtjs/color-mode", "@nuxt/eslint", "@nuxtjs/robots", "@nuxtjs/sitemap"],
+    modules: ["@nuxtjs/color-mode", "@nuxt/eslint", "@nuxtjs/robots", "@nuxtjs/sitemap", "@nuxt/image"],
     devtools: { enabled: true },
     css: ['~/assets/styles/main.scss'],
     components: [
@@ -74,13 +74,4 @@ export default defineNuxtConfig({
     robots: {
         sitemap: '/sitemap.xml',
     },
-    experimental: {
-        defaults: {
-            nuxtLink: {
-                activeClass: 'router-link-active',
-                exactActiveClass: 'router-link-exact-active',
-            }
-        }
-    }
 })
-
