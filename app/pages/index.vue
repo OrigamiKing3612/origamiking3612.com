@@ -40,4 +40,8 @@
     flex-direction: column;
     align-items: center;
 }
+
+.tools {
+    margin: 0;
+}
 </style>
