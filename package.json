@@ -16,7 +16,7 @@
         "@nuxtjs/robots": "5.4.0",
         "@nuxtjs/sitemap": "7.4.3",
         "eslint": "^9.33.0",
-        "nuxt": "^4.0.3",
+        "nuxt": "^4.2.2",
         "vue": "^3.5.18",
         "vue-router": "^4.5.1"
     },
@@ -29,5 +29,5 @@
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.36.0"
     },
-    "packageManager": "pnpm@10.11.0"
+    "packageManager": "pnpm@10.28.0"
 }
