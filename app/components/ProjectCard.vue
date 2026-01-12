@@ -1,10 +1,11 @@
 <template>
-    <NuxtLink :to="props.link" external class="link">
-        <Card :title="name">
+    <NuxtLink :to="project.link" external class="link">
+        <Card :title="project.name">
             <div class="project-card">
-                <NuxtImg :src="props.image" :alt="`${props.name} Preview Image`" class="image" />
+                <NuxtImg :src="project.images.dark ? project.images.dark : project.images.light"
+                    :alt="`${project.name} Preview Image`" class="image" :class="{ border: !project.hide_border }" />
                 <div class="content">
-                    <span class="description">{{ props.description }}</span>
+                    <span class="description">{{ project.description }}</span>
                 </div>
             </div>
         </Card>
@@ -13,11 +14,16 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-    name: string,
-    link: string,
-    description: string,
-    image: string,
+    project: Project,
 }>();
+
+const image = computed(() => {
+    const images = props.project.images;
+    if (images.dark) {
+        return useColorMode().value === 'dark' ? images.dark : images.light;
+    }
+    return images.light;
+})
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +31,10 @@ const props = defineProps<{
     max-width: 98%;
     max-height: 100%;
     border-radius: var(--border-radius);
+
+}
+
+.border {
     border: 3px solid var(--card-border);
 }
 
