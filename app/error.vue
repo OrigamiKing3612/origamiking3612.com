@@ -25,4 +25,3 @@ defineProps({
     error: Object as () => NuxtError,
 });
 </script>
-<style scoped lang="scss"></style>

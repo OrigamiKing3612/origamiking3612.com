@@ -4,9 +4,6 @@ const title = "OrigamiKing3612";
 const description = "OrigamiKing3612's Portfolio"
 
 export default defineNuxtConfig({
-    future: {
-        compatibilityVersion: 4
-    },
     compatibilityDate: '2025-07-15',
     app: {
         head: {
@@ -45,23 +42,10 @@ export default defineNuxtConfig({
     ssr: true,
     modules: ["@nuxtjs/color-mode", "@nuxt/eslint", "@nuxtjs/robots", "@nuxtjs/sitemap", "@nuxt/image"],
     devtools: { enabled: true },
-    css: ['~/assets/styles/main.scss'],
+    css: ['~/assets/styles/main.css'],
     components: [
         { path: "~/components/", pathPrefix: false }
     ],
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    additionalData: `
-                        @use "@/assets/styles/lib/_variables.scss" as *;
-                        @use "@/assets/styles/lib/_colors.scss" as *;
-                    `
-                }
-            }
-        }
-
-    },
     colorMode: {
         classSuffix: "",
         preference: "system",
