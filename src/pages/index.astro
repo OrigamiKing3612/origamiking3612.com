@@ -7,14 +7,15 @@ import { gravatarUrl, projects } from "../content/data.ts";
 ---
 
 <MainLayout>
-    <Card title="Hi! I'm Malachi">
+    <Card title="Hi! I'm Malachi" color="yellow" position="bottom-right">
         <div class="picture-container">
             <Image
                 class="picture"
                 src={gravatarUrl}
-                alt="Profile Picture"
+                alt="Profile"
                 width={80}
                 height={80}
+                loading="eager"
             />
             <p>
                 I enjoy creating scalable and efficient applications that solve
@@ -23,13 +24,13 @@ import { gravatarUrl, projects } from "../content/data.ts";
         </div>
     </Card>
     {projects.map((project) => <ProjectCard project={project} />)}
-    <Card title="My Skills">
+    <Card title="My Skills" color="light-blue">
         <ul class="tools">
             <li>
                 <strong>Certificates:</strong>
                 <ul>
                     <li>
-                        <span>
+                        <p>
                             I am a Certified Mid-Level Vue.js Developer by the
                             <a href="https://certificates.dev/vuejs">
                                 Vue.js Certification
@@ -41,7 +42,7 @@ import { gravatarUrl, projects } from "../content/data.ts";
                             >
                                 November 27th 2025.
                             </time>
-                        </span>
+                        </p>
                     </li>
                 </ul>
             </li>
@@ -66,7 +67,7 @@ import { gravatarUrl, projects } from "../content/data.ts";
             </li>
         </ul>
     </Card>
-    <Card title="Contact Me">
+    <Card title="Contact Me" color="green">
         <p>
             Feel free to reach out via
             <a href="mailto:origamiking3612@gmail.com">email</a>.

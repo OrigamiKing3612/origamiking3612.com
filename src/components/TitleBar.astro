@@ -29,8 +29,8 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid var(--border);
-        height: 60px;
+        border-bottom: 1px solid var(--border-color);
+        height: 50px;
         padding: 0 20px;
     }
     nav {
@@ -41,9 +41,14 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
         font-weight: bold;
         font-size: 1.2em;
         color: var(--text-0);
+        transition: color var(--transition-time) ease;
     }
 
-    a[active] {
-        color: var(--primary);
+    #home-link[active] {
+        color: var(--color-yellow);
+    }
+
+    #blog-link[active] {
+        color: var(--color-purple);
     }
 </style>

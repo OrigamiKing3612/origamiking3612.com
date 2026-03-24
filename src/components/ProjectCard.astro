@@ -11,17 +11,19 @@ const { project } = Astro.props;
 ---
 
 <a href={project.link} target="_blank" rel="noopener noreferrer">
-    <Card title={project.name}>
+    <Card title={project.name} color="purple" position="top-right">
         <div class="project-card">
             <Image
                 src={project.images.light}
                 class="image light-image border"
-                alt={project.name + " Preview Image"}
+                alt={project.name + " Preview"}
+                loading="eager"
             />
             <Image
                 src={project.images.dark}
                 class="image dark-image border"
-                alt={project.name + " Preview Image"}
+                alt={project.name + " Preview"}
+                loading="eager"
             />
             <span>{project.description}</span>
         </div>

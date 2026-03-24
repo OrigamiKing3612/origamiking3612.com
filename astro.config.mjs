@@ -1,6 +1,6 @@
 // @ts-check
 
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -19,4 +19,13 @@ export default defineConfig({
         rustCompiler: true,
     },
     prefetch: true,
+    fonts: [{
+        name: "Handlee",
+        provider: fontProviders.google(),
+        cssVariable: "--font-handlee",
+        weights: [400, 500, 600, 700, 700],
+        styles: [
+            "normal"
+        ],
+    }]
 });

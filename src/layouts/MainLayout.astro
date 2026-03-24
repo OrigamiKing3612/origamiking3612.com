@@ -1,4 +1,7 @@
 ---
+// import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
+
 import TitleBar from "@/TitleBar.astro";
 interface Props {
     title?: string;
@@ -16,6 +19,8 @@ const { title = "OrigamiKing3612", description = "About me" } = Astro.props;
     <head>
         <Head title={title} description={description} />
 
+        <Font cssVariable="--font-handlee" />
+        <!-- <ClientRouter /> -->
         <slot name="head" />
     </head>
     <body>
