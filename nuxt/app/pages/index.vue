@@ -11,24 +11,6 @@
             <ProjectCard :project />
         </div>
         <Card title="My Skills">
-            <ul class="tools">
-                <li><b>Languages:</b>
-                    <ul>
-                        <li>Go</li>
-                        <li>Typescript</li>
-                        <li>Swift</li>
-                        <li>Vue</li>
-                    </ul>
-                </li>
-                <li><b>Tools:</b>
-                    <ul>
-                        <li>Git</li>
-                        <li>Docker</li>
-                        <li>Vite</li>
-                        <li>Nuxt 4</li>
-                    </ul>
-                </li>
-            </ul>
         </Card>
     </div>
 </template>
@@ -50,13 +32,6 @@ const gravatarUrl = `https://www.gravatar.com/avatar/fcea678228cec5ddcfe7deb4641
     gap: 16px;
 }
 
-.avatar {
-    width: 80px;
-    height: 80px;
-    flex-shrink: 0;
-    border-radius: var(--border-radius);
-    border: 3px solid var(--card-border);
-}
 
 .tools {
     margin: 0;

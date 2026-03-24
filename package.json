@@ -1,33 +1,33 @@
 {
     "name": "origamiking3612.com",
     "type": "module",
-    "private": true,
+    "version": "0.1.0",
+    "engines": {
+        "node": ">=22.12.0"
+    },
     "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "prod": "pnpm build && npx serve dist -l 4321",
+        "typecheck": "astro check"
     },
     "dependencies": {
-        "@nuxt/eslint": "1.9.0",
-        "@nuxt/image": "1.11.0",
-        "@nuxtjs/color-mode": "^3.5.2",
-        "@nuxtjs/robots": "5.4.0",
-        "@nuxtjs/sitemap": "7.4.3",
-        "eslint": "^9.33.0",
-        "nuxt": "^4.4.2",
-        "vue": "^3.5.18",
-        "vue-router": "^4.5.1"
+        "@astrojs/check": "0.9.8",
+        "@astrojs/compiler-rs": "^0.1.6",
+        "@astrojs/mdx": "5.0.2",
+        "@astrojs/rss": "4.0.17",
+        "@astrojs/sitemap": "3.7.1",
+        "@astrojs/solid-js": "^6.0.1",
+        "@lucide/astro": "^1.0.1",
+        "astro": "^6.0.8",
+        "solid-js": "^1.9.11"
     },
     "devDependencies": {
-        "@eslint/js": "^9.31.0",
-        "@nuxt/eslint": "^1.5.2",
-        "eslint": "^9.31.0",
-        "eslint-plugin-vue": "^10.3.0",
-        "sass": "^1.89.2",
-        "typescript": "^5.8.3",
-        "typescript-eslint": "^8.36.0"
+        "prettier": "3.8.1",
+        "prettier-plugin-astro": "0.14.1",
+        "sharp": "^0.34.5"
     },
-    "packageManager": "pnpm@10.28.0"
+    "packageManager": "pnpm@10.32.1"
 }

@@ -1,0 +1,79 @@
+---
+interface Props {
+    title?: string;
+}
+const { title } = Astro.props;
+---
+
+<section class="card bordered">
+    {title && <h4 class="title">{title}</h4>}
+    <div class="v-container">
+        <slot />
+    </div>
+</section>
+
+<style>
+    .card {
+        position: relative;
+        background: var(--card-background);
+        padding: 50px 0px 20px 0px;
+        max-width: 700px;
+        width: 100%;
+        transition:
+            transform var(--transition-time) ease,
+            box-shadow var(--transition-time) ease;
+        box-sizing: border-box;
+        padding-top: 20px;
+    }
+
+    .card:has(.title) {
+        padding-top: 50px;
+    }
+
+    .title {
+        display: block;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        position: absolute;
+        top: -18px;
+        left: 15px;
+        font-size: 1.4em;
+        letter-spacing: -1px;
+        text-align: left;
+        color: var(--text-0);
+    }
+
+    .v-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .v-container > form,
+    .v-container > .card-ignore,
+    .v-container > .link,
+    .v-container > section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .v-container > .disclosure-group {
+        margin: 0 -10px;
+    }
+
+    .v-container > p {
+        text-align: left;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+    }
+</style>
