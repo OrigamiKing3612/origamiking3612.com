@@ -1,64 +1,80 @@
 ---
 import { Image } from "astro:assets";
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "~/layouts/MainLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Card from "../components/Card.astro";
 import { gravatarUrl, projects } from "../content/data.ts";
 ---
 
 <MainLayout>
-    <div class="main">
-        <Card title="Hi! I'm Malachi">
-            <div class="picture-container">
-                <Image
-                    class="picture"
-                    src={gravatarUrl}
-                    alt="Profile Picture"
-                    width={80}
-                    height={80}
-                />
-                <p>
-                    I enjoy creating scalable and efficient applications that
-                    solve real problems and provide great user experiences.
-                </p>
-            </div>
-        </Card>
-        {projects.map((project) => <ProjectCard project={project} />)}
-        <Card title="My Skills">
-            <ul class="tools">
-                <li>
-                    <b>Languages:</b>
-                    <ul>
-                        <li>Go</li>
-                        <li>Typescript</li>
-                        <li>Swift</li>
-                        <li>Vue</li>
-                    </ul>
-                </li>
-                <li>
-                    <b>Tools:</b>
-                    <ul>
-                        <li>Git</li>
-                        <li>Docker</li>
-                        <li>Vite</li>
-                        <li>Nuxt 4</li>
-                        <li>Astro</li>
-                    </ul>
-                </li>
-            </ul>
-        </Card>
-        <Card title="Contact Me" />
-    </div>
+    <Card title="Hi! I'm Malachi">
+        <div class="picture-container">
+            <Image
+                class="picture"
+                src={gravatarUrl}
+                alt="Profile Picture"
+                width={80}
+                height={80}
+            />
+            <p>
+                I enjoy creating scalable and efficient applications that solve
+                real problems and provide great user experiences.
+            </p>
+        </div>
+    </Card>
+    {projects.map((project) => <ProjectCard project={project} />)}
+    <Card title="My Skills">
+        <ul class="tools">
+            <li>
+                <strong>Certificates:</strong>
+                <ul>
+                    <li>
+                        <span>
+                            I am a Certified Mid-Level Vue.js Developer by the
+                            <a href="https://certificates.dev/vuejs">
+                                Vue.js Certification
+                            </a>
+                            since
+                            <time
+                                datetime="2025-11-27"
+                                title="November 27, 2025"
+                            >
+                                November 27th 2025.
+                            </time>
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Languages:</strong>
+                <ul>
+                    <li>Go</li>
+                    <li>Typescript</li>
+                    <li>Swift</li>
+                    <li>Vue</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Tools:</strong>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Vite</li>
+                    <li>Nuxt 4</li>
+                    <li>Astro</li>
+                </ul>
+            </li>
+        </ul>
+    </Card>
+    <Card title="Contact Me">
+        <p>
+            Feel free to reach out via
+            <a href="mailto:origamiking3612@gmail.com">email</a>.
+        </p>
+    </Card>
 </MainLayout>
 
 <style>
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
     .picture-container {
         display: flex;
         flex-direction: row;
