@@ -14,8 +14,8 @@ export const GET: APIRoute = async (context) => {
     );
 
     return rss({
-        title: "The House App",
-        description: "Updates and news from The House App",
+        title: "OrigamiKing3612",
+        description: "Updates from OrigamiKing3612's Blog",
         site: (context.site as URL).href,
         items: posts.map(({ data }) => ({
             title: data.title,

@@ -10,9 +10,9 @@ interface Props {
         | "light-blue"
         | "purple"
         | "pink";
-    position?: "top-left" | "bottom-left" | "top-right" | "bottom-right" | "";
+    position?: "top-left" | "bottom-left" | "top-right" | "bottom-right";
 }
-const { title, color = "yellow", position = "" } = Astro.props;
+const { title, color = "yellow", position = "top-right" } = Astro.props;
 ---
 
 <section class={["card", "background-color-" + color, position].join(" ")}>
@@ -156,17 +156,19 @@ const { title, color = "yellow", position = "" } = Astro.props;
     }
 
     @media (prefers-reduced-motion: no-preference) {
-        .card.bottom-right:hover::after {
-            transform: translate(4px, 4px) scale(0.8);
-        }
-        .card.bottom-left:hover::after {
-            transform: translate(-4px, 4px) scale(0.8);
-        }
-        .card.top-right:hover::after {
-            transform: translate(4px, -4px) scale(0.8);
-        }
-        .card.top-left:hover::after {
-            transform: translate(-4px, -4px) scale(0.8);
+        :global(a:has(.card:hover)) {
+            .card.bottom-right:hover::after {
+                transform: translate(4px, 4px) scale(0.8);
+            }
+            .card.bottom-left:hover::after {
+                transform: translate(-4px, 4px) scale(0.8);
+            }
+            .card.top-right:hover::after {
+                transform: translate(4px, -4px) scale(0.8);
+            }
+            .card.top-left:hover::after {
+                transform: translate(-4px, -4px) scale(0.8);
+            }
         }
     }
 </style>

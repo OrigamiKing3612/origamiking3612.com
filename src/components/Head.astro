@@ -17,22 +17,22 @@ const { title, description } = Astro.props;
 <meta
     name="theme-color"
     media="(prefers-color-scheme: light)"
-    content="#f7faff"
+    content="#f2f2f2"
 />
 <meta
     name="theme-color"
     media="(prefers-color-scheme: dark)"
-    content="#0d1117"
+    content="#010103"
 />
 <meta
     name="background-color"
     media="(prefers-color-scheme: light)"
-    content="#f7faff"
+    content="#f2f2f2"
 />
 <meta
     name="background-color"
     media="(prefers-color-scheme: dark)"
-    content="#0d1117"
+    content="#010103"
 />
 <meta property="og:title" content={title} />
 <meta property="og:site_name" content={title} />
@@ -40,12 +40,15 @@ const { title, description } = Astro.props;
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://origamiking3612.com" />
+<meta property="og:image" content="/icons/192x192.png" />
 
 <meta charset="utf-8" />
+<link rel="manifest" href="/manifest.json" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
-<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+<link rel="shortcut icon" href="/icons/icon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <script is:inline>

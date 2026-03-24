@@ -24,7 +24,7 @@ import { gravatarUrl, projects } from "../content/data.ts";
         </div>
     </Card>
     {projects.map((project) => <ProjectCard project={project} />)}
-    <Card title="My Skills" color="light-blue">
+    <Card title="My Skills" color="light-blue" position="bottom-left">
         <ul class="tools">
             <li>
                 <strong>Certificates:</strong>
@@ -46,6 +46,8 @@ import { gravatarUrl, projects } from "../content/data.ts";
                     </li>
                 </ul>
             </li>
+        </ul>
+        <ul class="horizontal-list">
             <li>
                 <strong>Languages:</strong>
                 <ul>
@@ -89,5 +91,11 @@ import { gravatarUrl, projects } from "../content/data.ts";
         flex-shrink: 0;
         border-radius: var(--border-radius);
         border: 3px solid var(--card-border);
+    }
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 </style>
