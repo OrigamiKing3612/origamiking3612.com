@@ -1,0 +1,175 @@
+---
+interface Props {
+    title?: string;
+    color:
+        | "red"
+        | "orange"
+        | "yellow"
+        | "green"
+        | "teal"
+        | "blue"
+        | "light-blue"
+        | "purple"
+        | "pink";
+    position?: "top-left" | "bottom-left" | "top-right" | "bottom-right";
+}
+const { title, color = "yellow", position = "top-right" } = Astro.props;
+---
+
+<section class={["card", "background-color-" + color, position].join(" ")}>
+    {title && <h4 class="title">{title}</h4>}
+    <div class="v-container">
+        <slot />
+    </div>
+</section>
+
+<style>
+    .card {
+        --current-background: var(--background-0);
+        --shadow: rgba(0, 0, 0, 0.3);
+        --shadow-spread: -5px;
+        --shadow-blur: 10px;
+        position: relative;
+        padding: 50px 0px 20px 0px;
+        max-width: 700px;
+        width: 100%;
+        transition: transform var(--transition-time) ease;
+        box-sizing: border-box;
+        padding-top: 20px;
+        color: var(--text-pencil);
+        font-family: var(--font-handlee);
+        font-weight: 800;
+    }
+
+    .top-left::after,
+    .top-right::after,
+    .bottom-left::after,
+    .bottom-right::after {
+        content: "";
+        position: absolute;
+
+        width: 40px;
+        height: 40px;
+
+        transition:
+            transform 0.2s ease-in,
+            gradient var(--transition-time) ease;
+    }
+
+    .bottom-right::after {
+        bottom: 0;
+        right: 0;
+
+        background: linear-gradient(
+            135deg,
+            transparent 50%,
+            var(--current-background) 50%
+        );
+
+        box-shadow: -10px -10px var(--shadow-blur) var(--shadow-spread)
+            var(--shadow);
+    }
+
+    .top-right::after {
+        top: 0;
+        right: 0;
+
+        background: linear-gradient(
+            45deg,
+            transparent 50%,
+            var(--current-background) 50%
+        );
+
+        box-shadow: -10px 10px var(--shadow-blur) var(--shadow-spread)
+            var(--shadow);
+    }
+
+    .bottom-left::after {
+        bottom: 0;
+        left: 0;
+
+        background: linear-gradient(
+            225deg,
+            transparent 50%,
+            var(--current-background) 50%
+        );
+
+        box-shadow: 10px -10px var(--shadow-blur) var(--shadow-spread)
+            var(--shadow);
+    }
+
+    .top-left::after {
+        top: 0;
+        left: 0;
+
+        background: linear-gradient(
+            315deg,
+            transparent 50%,
+            var(--current-background) 50%
+        );
+
+        box-shadow: 10px 10px var(--shadow-blur) var(--shadow-spread)
+            var(--shadow);
+    }
+
+    .card:has(.title) {
+        padding-top: 50px;
+    }
+
+    .title {
+        display: block;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        position: absolute;
+        top: -18px;
+        left: 15px;
+        font-size: 1.4em;
+        letter-spacing: -1px;
+        text-align: left;
+        background-color: var(--text-pencil);
+    }
+
+    .v-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .v-container > form,
+    .v-container > .card-ignore,
+    .v-container > .link,
+    .v-container > section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .v-container > .disclosure-group {
+        margin: 0 -10px;
+    }
+
+    .v-container > p {
+        text-align: left;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        :global(a:has(.card:hover)) {
+            .card.bottom-right:hover::after {
+                transform: translate(4px, 4px) scale(0.8);
+            }
+            .card.bottom-left:hover::after {
+                transform: translate(-4px, 4px) scale(0.8);
+            }
+            .card.top-right:hover::after {
+                transform: translate(4px, -4px) scale(0.8);
+            }
+            .card.top-left:hover::after {
+                transform: translate(-4px, -4px) scale(0.8);
+            }
+        }
+    }
+</style>

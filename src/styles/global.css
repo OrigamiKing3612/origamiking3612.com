@@ -1,0 +1,116 @@
+@import "./colors.css";
+@layer variables, reset, base, components, util;
+
+@layer variables {
+    :root {
+        --text-0: oklch(0.50 0 0);
+        --subtext-0: oklch(0.184 0 0);
+        --text-pencil: oklch(0.45 0 0);
+        --background-0: oklch(0.962 0 261);
+
+        --border-color: oklch(0.45 0 0);
+
+        --border-radius: 1rem;
+        --transition-time: 200ms;
+        --transitions: background-color var(--transition-time) ease, border-color var(--transition-time) ease, color var(--transition-time) ease;
+    }
+
+    :root.dark {
+        --text-0: #f0f0f0;
+        --subtext-0: oklch(0.753 0 0);
+
+        --background-0: oklch(0.075 0.014 258);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :root {
+            --transition-time: 0ms;
+            --transitions: none;
+        }
+    }
+}
+
+@layer reset {
+
+    html {
+        scrollbar-gutter: stable;
+        interpolate-size: allow-keywords;
+        transition-property: opacity, display;
+        transition-duration: var(--transition-time);
+        transition-behavior: allow-discrete;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--text-0);
+        text-wrap: balance;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
+
+    html,
+    body {
+        background-color: var(--background-0) !important;
+        color: var(--text-0);
+        font-family: var(--font-dm-sans), sans-serif;
+        /* user-select: none; */
+        cursor: default;
+        transition: var(--transitions);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@layer components {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: 700;
+        margin: 1.2rem 0 0.8rem;
+        background: var(--text-0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    ul {
+        padding-left: 1.2rem;
+
+        li {
+            margin: 0.4rem 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+@layer util {
+
+    .link {
+        color: var(--text-0);
+        text-decoration: none;
+    }
+}

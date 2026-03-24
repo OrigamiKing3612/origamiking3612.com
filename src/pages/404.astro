@@ -1,0 +1,32 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro";
+---
+
+<MainLayout title="404 - Page Not Found">
+    <h1>An Error Occurred</h1>
+    <h2>404</h2>
+    <a href="/">
+        <div class="button">Back</div>
+    </a>
+</MainLayout>
+
+<style>
+    a {
+        text-decoration: none;
+    }
+    .button {
+        padding: 10px 20px;
+        background: var(--card-background);
+        font-weight: bold;
+        transition:
+            box-shadow var(--transition-time) ease,
+            transform var(--transition-time) ease,
+            color var(--transition-time) ease;
+    }
+
+    .button:hover {
+        color: var(--primary-hover);
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+</style>

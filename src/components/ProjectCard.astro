@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../content/types";
+import Card from "./Card.astro";
+
+export interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a href={project.link} target="_blank" rel="noopener noreferrer">
+    <Card title={project.name} color="purple" position="top-right">
+        <div class="project-card">
+            <Image
+                src={project.images.light}
+                class="image light-image border"
+                alt={project.name + " Preview"}
+                loading="eager"
+            />
+            <Image
+                src={project.images.dark}
+                class="image dark-image border"
+                alt={project.name + " Preview"}
+                loading="eager"
+            />
+            <span>{project.description}</span>
+        </div>
+    </Card>
+</a>
+
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: normal;
+    }
+
+    .image {
+        height: auto;
+        max-width: 98%;
+        max-height: 100%;
+        border-radius: var(--border-radius);
+    }
+
+    .border {
+        border: 3px solid var(--card-border);
+    }
+
+    .project-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: center;
+        gap: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .light-image {
+            display: none;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        .dark-image {
+            display: none;
+        }
+    }
+</style>

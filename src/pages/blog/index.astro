@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "~/layouts/MainLayout.astro";
+import CardGrid from "@/CardGrid.astro";
+import Card from "@/Card.astro";
+
+const unsortedPosts = await getCollection("blog");
+const posts = unsortedPosts.sort(
+    (a, b) => Number(b.data.timestamp) - Number(a.data.timestamp),
+);
+---
+
+<MainLayout title="Blog - OrigamiKing3612">
+    <link
+        slot="head"
+        rel="alternate"
+        type="application/rss+xml"
+        title="OrigamiKing3612's Blog RSS"
+        href="https://origamiking3612.com/blog/rss.xml"
+    />
+    <h1>My Blog</h1>
+    <CardGrid>
+        {
+            posts.map(({ data }) => (
+                <a href={`/blog/${data.slug}`} class="link">
+                    <Card
+                        color="light-blue"
+                        title={data.title}
+                        position="top-right"
+                    >
+                        <div class="description">{data.description}</div>
+                        <div class="bottom">
+                            <time
+                                class="timestamp"
+                                datetime={new Date(
+                                    data.timestamp,
+                                ).toISOString()}
+                            >
+                                {new Date(data.timestamp).toLocaleDateString()}
+                            </time>
+                        </div>
+                    </Card>
+                </a>
+            ))
+        }
+    </CardGrid>
+</MainLayout>
+
+<style>
+    .link {
+        text-decoration: none;
+    }
+
+    .link > :global(.card) {
+        max-width: 100%;
+        min-height: 150px;
+    }
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .bottom {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        font-size: 0.8rem;
+    }
+</style>

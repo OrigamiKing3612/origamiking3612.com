@@ -1,0 +1,67 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import MainLayout from "~/layouts/MainLayout.astro";
+import { components } from "@/ContentComponents.astro";
+
+export type Props = {
+    post: CollectionEntry<"blog">;
+};
+
+export async function getStaticPaths() {
+    const unsortedPosts = await getCollection("blog");
+    const posts = unsortedPosts.sort(
+        (a, b) => Number(b.data.timestamp) - Number(a.data.timestamp),
+    );
+    return posts.map((post) => ({
+        params: { slug: post.data.slug },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+---
+
+<MainLayout title={`${post.data.title} - OrigamiKing3612`}>
+    <link
+        slot="head"
+        rel="alternate"
+        type="application/rss+xml"
+        title="OrigamiKing3612's Blog RSS"
+        href="https://origamiking3612.com/blog/rss.xml"
+    />
+    <article class="blog">
+        <header>
+            <h1>{data.title}</h1>
+            <div class="description">{data.description}</div>
+        </header>
+        <hr class={"border-color-" + post.data.color} />
+        <div class="content">
+            <Content components={components} />
+        </div>
+    </article>
+</MainLayout>
+
+<style>
+    .blog {
+        width: 80vw;
+
+        header {
+            margin-bottom: 1rem;
+            text-align: left;
+
+            .description {
+                color: var(--subtext-0);
+            }
+        }
+    }
+
+    .content > .card {
+        max-width: 100%;
+    }
+
+    hr {
+        width: 100%;
+    }
+</style>

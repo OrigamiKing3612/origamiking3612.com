@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "~/layouts/MainLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Card from "../components/Card.astro";
+import { gravatarUrl, projects } from "../content/data.ts";
+---
+
+<MainLayout>
+    <Card title="Hi! I'm Malachi" color="yellow">
+        <div class="picture-container">
+            <Image
+                class="picture"
+                src={gravatarUrl}
+                alt="Profile"
+                width={80}
+                height={80}
+                loading="eager"
+            />
+            <p>
+                I enjoy creating scalable and efficient applications that solve
+                real problems and provide great user experiences.
+            </p>
+        </div>
+    </Card>
+    {projects.map((project) => <ProjectCard project={project} />)}
+    <Card title="My Skills" color="light-blue" position="bottom-left">
+        <ul class="tools">
+            <li>
+                <strong>Certificates:</strong>
+                <ul>
+                    <li>
+                        <p>
+                            I am a Certified Mid-Level Vue.js Developer by the
+                            <a href="https://certificates.dev/vuejs">
+                                Vue.js Certification
+                            </a>
+                            since
+                            <time
+                                datetime="2025-11-27"
+                                title="November 27, 2025"
+                            >
+                                November 27th 2025.
+                            </time>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="horizontal-list">
+            <li>
+                <strong>Languages:</strong>
+                <ul>
+                    <li>Go</li>
+                    <li>Typescript</li>
+                    <li>Swift</li>
+                    <li>Vue</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Tools:</strong>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Vite</li>
+                    <li>Nuxt 4</li>
+                    <li>Astro</li>
+                </ul>
+            </li>
+        </ul>
+    </Card>
+    <Card title="Contact Me" color="teal">
+        <p>
+            Feel free to reach out via
+            <a href="mailto:origamiking3612@gmail.com">email</a>.
+        </p>
+    </Card>
+</MainLayout>
+
+<style>
+    .picture-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .picture {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        border-radius: var(--border-radius);
+        border: 3px solid var(--card-border);
+    }
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+</style>

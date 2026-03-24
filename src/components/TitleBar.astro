@@ -1,0 +1,54 @@
+---
+import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx";
+---
+
+<header>
+    <nav>
+        <a href="/" id="home-link">Home</a>
+        <a href="/blog" id="blog-link">Blog</a>
+    </nav>
+
+    <SwitchThemesButton client:only="solid" />
+</header>
+
+<script>
+    const currentPath = window.location.pathname;
+    const idMap = {
+        "/": "home-link",
+        "/blog": "blog-link",
+    } as const;
+    type Path = keyof typeof idMap;
+    if (currentPath in idMap) {
+        const id = idMap[currentPath as Path];
+        document.getElementById(id)?.setAttribute("active", "");
+    }
+</script>
+
+<style>
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-color);
+        height: 50px;
+        padding: 0 20px;
+    }
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+    a {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: var(--text-0);
+        transition: color var(--transition-time) ease;
+    }
+
+    #home-link[active] {
+        color: var(--color-yellow);
+    }
+
+    #blog-link[active] {
+        color: var(--color-purple);
+    }
+</style>
