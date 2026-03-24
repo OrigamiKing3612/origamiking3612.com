@@ -4,10 +4,10 @@
 @layer variables {
     :root {
         --text-0: #1a1a1a;
+        --subtext-0: oklch(0.184 0 0);
         --text-pencil: oklch(0.45 0 0);
         --background-0: #f7faff;
 
-        --shadow: rgba(0, 0, 0, 0.3);
         --border-color: oklch(0.45 0 0);
 
         --border-radius: 1rem;
@@ -17,8 +17,8 @@
 
     :root.dark {
         --text-0: #f0f0f0;
+        --subtext-0: oklch(0.753 0 0);
 
-        --shadow: rgba(255, 255, 255, 1.1);
         --background-0: oklch(0.075 0.014 258);
     }
 

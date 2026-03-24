@@ -36,7 +36,7 @@ const { Content } = await render(post);
             <h1>{data.title}</h1>
             <div class="description">{data.description}</div>
         </header>
-        <hr />
+        <hr class={"border-color-" + post.data.color} />
         <div class="content">
             <Content components={components} />
         </div>

@@ -9,9 +9,11 @@ const blog = defineCollection({
         title: z.string(),
         description: z.string(),
         slug: z.string().describe("Should be the file name without prefix and '.mdx' extension"),
-        type: z.enum(['release', 'announcement']),
         timestamp: z.date(),
-        tags: z.array(z.string()),
+        tags: z.array(z.string()).optional(),
+        color: z.enum(["red", "orange", "yellow", "green", "light-blue", "teal", "blue", "purple", "pink"]),
+
+
     }),
 });
 

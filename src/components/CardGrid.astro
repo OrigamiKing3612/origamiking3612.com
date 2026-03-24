@@ -1,0 +1,32 @@
+---
+
+---
+
+<div class="card-grid">
+    <slot />
+</div>
+
+<style>
+    .card-grid {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+        container-type: inline-size;
+        margin: 0 20px;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(clamp(0px, 100%, 500px), 1fr)
+        );
+    }
+
+    .card-grid > .card {
+        overflow: auto;
+        max-width: 100%;
+    }
+
+    @media (max-width: 650px) {
+        .card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

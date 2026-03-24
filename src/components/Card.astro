@@ -6,12 +6,13 @@ interface Props {
         | "orange"
         | "yellow"
         | "green"
+        | "teal"
         | "light-blue"
         | "purple"
         | "pink";
-    position?: "top-left" | "bottom-left" | "top-right" | "bottom-right";
+    position?: "top-left" | "bottom-left" | "top-right" | "bottom-right" | "";
 }
-const { title, color = "yellow", position = "top-right" } = Astro.props;
+const { title, color = "yellow", position = "" } = Astro.props;
 ---
 
 <section class={["card", "background-color-" + color, position].join(" ")}>
