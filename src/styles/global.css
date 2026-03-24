@@ -3,10 +3,10 @@
 
 @layer variables {
     :root {
-        --text-0: #1a1a1a;
+        --text-0: oklch(0.50 0 0);
         --subtext-0: oklch(0.184 0 0);
         --text-pencil: oklch(0.45 0 0);
-        --background-0: #f7faff;
+        --background-0: oklch(0.962 0 261);
 
         --border-color: oklch(0.45 0 0);
 
