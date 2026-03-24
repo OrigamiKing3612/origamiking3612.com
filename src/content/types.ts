@@ -1,4 +1,3 @@
-
 export interface Project {
     name: string;
     link: string;
@@ -7,6 +6,5 @@ export interface Project {
         light: ImageMetadata;
         dark: ImageMetadata;
     };
-    hide_border?: boolean;
 }
 

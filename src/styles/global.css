@@ -64,7 +64,7 @@
     body {
         background-color: var(--background-0) !important;
         color: var(--text-0);
-        font-family: 'DM Sans', sans-serif;
+        font-family: var(--font-dm-sans), sans-serif;
         /* user-select: none; */
         cursor: default;
         transition: var(--transitions);
