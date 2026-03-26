@@ -1,31 +1,16 @@
 {
     "extends": "astro/tsconfigs/strict",
-    "include": [
-        ".astro/types.d.ts",
-        "**/*"
-    ],
-    "exclude": [
-        "dist"
-    ],
+    "include": [".astro/types.d.ts", "**/*"],
+    "exclude": ["dist"],
     "compilerOptions": {
         "jsx": "preserve",
         "jsxImportSource": "solid-js",
         "paths": {
-            "~/*": [
-                "./src/*"
-            ],
-            "@/*": [
-                "./src/components/*"
-            ],
-            "@layouts/*": [
-                "./src/layouts/*"
-            ],
-            "@utils/*": [
-                "./src/utils/*"
-            ],
-            "@assets/*": [
-                "./src/assets/*"
-            ]
+            "~/*": ["./src/*"],
+            "@/*": ["./src/components/*"],
+            "@layouts/*": ["./src/layouts/*"],
+            "@utils/*": ["./src/utils/*"],
+            "@assets/*": ["./src/assets/*"]
         }
     }
 }

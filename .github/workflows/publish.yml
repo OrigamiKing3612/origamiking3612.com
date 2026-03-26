@@ -17,27 +17,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - run: corepack enable
-            - name: Setup node
-              uses: actions/setup-node@v4
+            - uses: voidzero-dev/setup-vp@v1
               with:
-                  node-version: 22
-            - name: Install pnpm
-              run: npm install -g pnpm
-            - name: Install dependencies
-              run: pnpm install
-            # - name: Restore cache
-            #   uses: actions/cache@v4
-            #   with:
-            #     path: |
-            #       dist
-            #       .nuxt
-            #     key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
-            #     restore-keys: |
-            #       ${{ runner.os }}-nuxt-build-
-            - name: Nuxt build (with deep debug)
-              run: |
-                  pnpm build --preset github_pages
+                  node-version: "25"
+                  cache: true
+            - run: vp install
+            - run: vp check
+            - run: vp build
             - name: Setup Pages
               uses: actions/configure-pages@v5
               with:

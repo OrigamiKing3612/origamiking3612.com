@@ -21,7 +21,6 @@
     }
 }
 
-
 @layer util {
     .border-color-red {
         border-color: var(--color-red);
