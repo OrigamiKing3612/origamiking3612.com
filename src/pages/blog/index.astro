@@ -24,7 +24,7 @@ const posts = unsortedPosts.sort(
             posts.map(({ data }) => (
                 <a href={`/blog/${data.slug}`} class="link">
                     <Card
-                        color="light-blue"
+                        color={data.color}
                         title={data.title}
                         position="top-right"
                     >

@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import MainLayout from "~/layouts/MainLayout.astro";
-import { components } from "@/ContentComponents.astro";
 
 export type Props = {
     post: CollectionEntry<"blog">;
@@ -21,6 +20,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { data } = post;
 const { Content } = await render(post);
+import "~/styles/markdown.css";
+const color = post.data.color;
 ---
 
 <MainLayout title={`${post.data.title} - OrigamiKing3612`}>
@@ -31,20 +32,28 @@ const { Content } = await render(post);
         title="OrigamiKing3612's Blog RSS"
         href="https://origamiking3612.com/blog/rss.xml"
     />
-    <article class="blog">
+    <article class="blog" style={{ "--color": `var(--color-${color})` }}>
         <header>
             <h1>{data.title}</h1>
             <div class="description">{data.description}</div>
         </header>
-        <hr class={"border-color-" + post.data.color} />
+        <hr class={"border-color-" + color} />
         <div class="content">
-            <Content components={components} />
+            <Content />
         </div>
     </article>
 </MainLayout>
 
 <style>
     .blog {
+        accent-color: var(--color);
+        card-color: var(--color);
+
+        ::selection {
+            background: var(--color);
+            color: var(--text-0);
+        }
+
         width: 80vw;
 
         header {
@@ -55,6 +64,7 @@ const { Content } = await render(post);
                 color: var(--subtext-0);
             }
         }
+        margin-bottom: 5rem;
     }
 
     .content > .card {
@@ -63,5 +73,6 @@ const { Content } = await render(post);
 
     hr {
         width: 100%;
+        margin-bottom: 1rem;
     }
 </style>

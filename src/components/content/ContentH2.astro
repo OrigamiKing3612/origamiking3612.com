@@ -1,9 +1,18 @@
-<h2>
+---
+const props = Astro.props;
+---
+
+<h2 {...props}>
     <slot />
 </h2>
 <style>
     h2 {
         font-size: 20px;
         text-align: left;
+    }
+    h2:has(code) {
+        code {
+            background-color: transparent;
+        }
     }
 </style>
