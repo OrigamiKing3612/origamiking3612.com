@@ -8,12 +8,21 @@ import mdx from "@astrojs/mdx";
 
 import solidJs from "@astrojs/solid-js";
 
+import expressiveCode from "astro-expressive-code";
+
 export default defineConfig({
     site: "https://origamiking3612.com",
     output: "static",
     integrations: [
         solidJs(),
         sitemap(),
+        expressiveCode({
+            themes: ["catppuccin-latte", "catppuccin-mocha"],
+            useDarkModeMediaQuery: false,
+            themeCssSelector: (theme) => {
+                return theme.name === "catppuccin-latte" ? ":root" : ":root.dark";
+            },
+        }),
         mdx({
             optimize: false, // allow for custom components https://github.com/withastro/astro/issues/14611
         }),
@@ -39,4 +48,9 @@ export default defineConfig({
             styles: ["normal"],
         },
     ],
+    markdown: {
+        shikiConfig: {
+            theme: "github-dark",
+        },
+    },
 });
