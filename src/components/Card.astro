@@ -39,6 +39,7 @@ const { title, color = "yellow", position = "top-right" } = Astro.props;
         color: var(--text-pencil);
         font-family: var(--font-handlee);
         font-weight: 800;
+        container-type: initial;
     }
 
     .top-left::after,
@@ -118,18 +119,15 @@ const { title, color = "yellow", position = "top-right" } = Astro.props;
 
     .title {
         display: block;
-        margin-top: 1.33em;
-        margin-bottom: 1.33em;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 1.33em 0;
         font-weight: bold;
         position: absolute;
-        top: -18px;
-        left: 15px;
-        font-size: 1.4em;
+        top: -1.1rem;
+        left: 1rem;
         letter-spacing: -1px;
         text-align: left;
         background-color: var(--text-pencil);
+        font-size: clamp(0.9rem, 5cqw, 1.4rem);
     }
 
     .v-container {

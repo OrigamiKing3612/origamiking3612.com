@@ -1,0 +1,140 @@
+---
+import { Image } from "astro:assets";
+import IconLight from "@assets/images/icon.png";
+---
+
+<footer id="footer">
+    <div class="footer-left">
+        <div class="footer-info">
+            <Image
+                src={IconLight}
+                alt="Icon"
+                title="Icon"
+                width="64"
+                height="64"
+                class="footer-logo"
+            />
+            <div class="footer-text">
+                <strong>OrigamiKing3612</strong><br />
+                origamiking3612.com
+            </div>
+        </div>
+    </div>
+
+    <nav class="footer-right">
+        <div>
+            <h4>General</h4>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+            <a href="mailto:origamiking3612@gmail.com">Contact</a>
+            <a href="https://github.com/OrigamiKing3612">GitHub</a>
+        </div>
+    </nav>
+</footer>
+
+<style is:global>
+    #footer {
+        margin-top: 4rem;
+        padding: 1rem 2rem;
+        border-top: 2px solid var(--background-1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transitions);
+    }
+
+    #footer .footer-left .footer-info {
+        display: flex;
+        align-items: center;
+    }
+
+    #footer .footer-logo {
+        border-radius: 0.5rem;
+        margin-right: 1rem;
+        user-select: none;
+    }
+
+    #footer .footer-text a {
+        text-decoration: none;
+    }
+
+    #footer .footer-right {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    #footer .footer-right h4 {
+        font-weight: bold;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        user-select: none;
+    }
+
+    #footer .footer-right a {
+        display: block;
+        color: var(--text-1);
+        font-size: 0.9rem;
+        text-decoration: none;
+        margin: 0.25rem 0;
+        transition: color 0.2s ease;
+        font-weight: normal;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+    :root.dark #footer .footer-right a:hover {
+        color: var(--color-yellow);
+    }
+
+    .link {
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    @media (max-width: 650px) {
+        #footer {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        #footer .footer-left {
+            width: 100%;
+            order: 2;
+            margin-bottom: 0;
+        }
+        #footer .footer-info {
+            justify-content: center;
+            text-align: left;
+        }
+
+        #footer .footer-right {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            order: 1;
+            width: 100%;
+        }
+
+        #footer .footer-right h4 {
+            font-size: 1rem;
+        }
+
+        #footer .footer-right a {
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+        }
+    }
+</style>

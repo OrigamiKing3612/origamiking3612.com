@@ -1,0 +1,55 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<MainLayout>
+    <Card title="About Me" color="teal" position="top-right">
+        <p>
+            Hi! I’m Malachi (OrigamiKing3612). I’m a student who loves
+            programming, audio-visual projects, and self-hosted tech.
+        </p>
+
+        <p>
+            I run a small home server network with several laptops and Raspberry
+            Pis, hosting things like n8n, Uptime Kuma, Grafana, Pi-hole,
+            OctoPrint.
+        </p>
+
+        <p>
+            I enjoy building projects that mix software, hardware, and
+            automation. I’m also passionate about making clean, responsive web
+            layouts and intuitive app interfaces.
+        </p>
+
+        <h4 class="title">Tech I Use</h4>
+        <ul>
+            <li>Linux on laptops and Raspberry Pis</li>
+            <li>Docker for containerized apps</li>
+            <li>Grafana, Prometheus, n8n for monitoring</li>
+            <li>Godot for game development</li>
+            <li>Nuxt or Astro for web apps</li>
+            <li>Neovim</li>
+        </ul>
+
+        <h4 class="title">Fun Facts</h4>
+        <ul>
+            <li>
+                I’ve made my own <a href="https://the-house-app.com">App</a>
+            </li>
+            <li>If you couldn't tell, I’m a big fan of origami.</li>
+        </ul>
+    </Card>
+</MainLayout>
+
+<style>
+    .title {
+        display: block;
+        margin: 0.2rem 0;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-align: left;
+        background-color: var(--text-pencil);
+        font-size: clamp(0.9rem, 5cqw, 1.4rem);
+    }
+</style>

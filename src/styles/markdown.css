@@ -70,7 +70,7 @@
     text-align: left;
 }
 
-.content a {
+:root.dark .content a {
     color: var(--color);
 }
 

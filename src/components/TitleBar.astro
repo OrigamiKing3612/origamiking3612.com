@@ -2,7 +2,7 @@
 import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx";
 ---
 
-<header>
+<header id="header">
     <nav>
         <a href="/" id="home-link">Home</a>
         <a href="/blog" id="blog-link">Blog</a>
@@ -24,8 +24,8 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
     }
 </script>
 
-<style>
-    header {
+<style is:global>
+    #header {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -33,15 +33,20 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
         height: 50px;
         padding: 0 20px;
     }
-    nav {
+    #header nav {
         display: flex;
         gap: 20px;
     }
-    a {
+    #header a {
         font-weight: bold;
         font-size: 1.2em;
         color: var(--text-0);
         transition: color var(--transition-time) ease;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     #home-link[active] {
