@@ -40,4 +40,42 @@
     .content li::marker {
         color: var(--color);
     }
+
+    .content h1 {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    .content h2 {
+        font-size: 23px;
+        text-align: left;
+    }
+
+    .content h3 {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .content h4 {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .content h5 {
+        font-size: 10px;
+        text-align: left;
+    }
+
+    .content h6 {
+        font-size: 8px;
+        text-align: left;
+    }
+
+    .content a {
+        color: var(--color);
+    }
+
+    .content a:hover {
+        color: var(--color-hover);
+    }
 }

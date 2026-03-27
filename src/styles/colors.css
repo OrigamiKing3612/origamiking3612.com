@@ -5,19 +5,19 @@
         --color-orange: oklch(0.727 0.146 45);
         --color-orange-hover: oklch(0.686 0.146 45);
         --color-yellow: oklch(0.896 0.095 98.682);
-        --color-yellow-hover: oklch(0.849 0.095 98.682);
+        --color-yellow-hover: oklch(0.799 0.095 98.682);
         --color-green: oklch(0.673 0.15 143);
         --color-green-hover: oklch(0.607 0.15 143);
         --color-teal: oklch(0.741 0.107 175);
         --color-teal-hover: oklch(0.704 0.107 175);
         --color-light-blue: oklch(0.792 0.099 234);
-        --color-light-blue-hover: oklch(0.754 0.099 234);
+        --color-light-blue-hover: oklch(0.714 0.099 234);
         --color-blue: oklch(0.648 0.152 259);
         --color-blue-hover: oklch(0.549 0.152 259);
         --color-purple: oklch(0.76 0.084 299);
         --color-purple-hover: oklch(0.719 0.084 299);
         --color-pink: oklch(0.737 0.129 13);
-        --color-pink-hover: oklch(0.697 0.129 13);
+        --color-pink-hover: oklch(0.647 0.129 13);
     }
 }
 

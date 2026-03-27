@@ -35,7 +35,13 @@ const color = post.data.color;
         title="OrigamiKing3612's Blog RSS"
         href="https://origamiking3612.com/blog/rss.xml"
     />
-    <article class="blog" style={{ "--color": `var(--color-${color})` }}>
+    <article
+        class="blog"
+        style={{
+            "--color": `var(--color-${color})`,
+            "--color-hover": `var(--color-${color}-hover)`,
+        }}
+    >
         <header>
             <h1>{data.title}</h1>
             <div class="description">{data.description}</div>
@@ -50,7 +56,7 @@ const color = post.data.color;
 <style>
     .blog {
         accent-color: var(--color);
-        card-color: var(--color);
+        caret-color: var(--color);
 
         ::selection {
             background: var(--color);
