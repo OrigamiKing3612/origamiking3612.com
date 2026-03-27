@@ -1,4 +1,4 @@
-@layer base {
+@layer components {
     .content :where(code):not(:where(pre, h1, h2, h3, h4, h5, h6) code) {
         display: inline-block;
         padding-left: 0.5rem;
