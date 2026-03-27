@@ -53,4 +53,9 @@ export default defineConfig({
             theme: "github-dark",
         },
     },
+    vite: {
+        build: {
+            minify: false,
+        }
+    }
 });
