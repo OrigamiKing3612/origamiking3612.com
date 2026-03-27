@@ -70,11 +70,9 @@
     p {
         text-wrap: pretty;
     }
-
 }
 
 @layer base {
-
     html,
     body {
         background-color: var(--background-0);
