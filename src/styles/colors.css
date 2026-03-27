@@ -1,132 +1,20 @@
-@layer variables {
-    :root {
-        --color-red: oklch(0.692 0.206 29);
-        --color-red-hover: oklch(0.666 0.206 29);
-        --color-orange: oklch(0.727 0.146 45);
-        --color-orange-hover: oklch(0.686 0.146 45);
-        --color-yellow: oklch(0.896 0.095 98.682);
-        --color-yellow-hover: oklch(0.799 0.095 98.682);
-        --color-green: oklch(0.673 0.15 143);
-        --color-green-hover: oklch(0.607 0.15 143);
-        --color-teal: oklch(0.741 0.107 175);
-        --color-teal-hover: oklch(0.704 0.107 175);
-        --color-light-blue: oklch(0.792 0.099 234);
-        --color-light-blue-hover: oklch(0.714 0.099 234);
-        --color-blue: oklch(0.648 0.152 259);
-        --color-blue-hover: oklch(0.549 0.152 259);
-        --color-purple: oklch(0.76 0.084 299);
-        --color-purple-hover: oklch(0.719 0.084 299);
-        --color-pink: oklch(0.737 0.129 13);
-        --color-pink-hover: oklch(0.647 0.129 13);
-    }
-}
-
-@layer util {
-    .border-color-red {
-        border-color: var(--color-red);
-    }
-
-    .color-red {
-        color: var(--color-red);
-    }
-
-    .background-color-red {
-        background-color: var(--color-red);
-    }
-
-    .border-color-orange {
-        border-color: var(--color-orange);
-    }
-
-    .color-orange {
-        color: var(--color-orange);
-    }
-
-    .background-color-orange {
-        background-color: var(--color-orange);
-    }
-
-    .border-color-yellow {
-        border-color: var(--color-yellow);
-    }
-
-    .color-yellow {
-        color: var(--color-yellow);
-    }
-
-    .background-color-yellow {
-        background-color: var(--color-yellow);
-    }
-
-    .border-color-green {
-        border-color: var(--color-green);
-    }
-
-    .color-green {
-        color: var(--color-green);
-    }
-
-    .background-color-green {
-        background-color: var(--color-green);
-    }
-
-    .border-color-teal {
-        border-color: var(--color-teal);
-    }
-
-    .color-teal {
-        color: var(--color-teal);
-    }
-
-    .background-color-teal {
-        background-color: var(--color-teal);
-    }
-
-    .border-color-light-blue {
-        border-color: var(--color-light-blue);
-    }
-
-    .color-light-blue {
-        color: var(--color-light-blue);
-    }
-
-    .background-color-light-blue {
-        background-color: var(--color-light-blue);
-    }
-
-    .border-color-blue {
-        border-color: var(--color-blue);
-    }
-
-    .color-blue {
-        color: var(--color-blue);
-    }
-
-    .background-color-blue {
-        background-color: var(--color-blue);
-    }
-
-    .border-color-purple {
-        border-color: var(--color-purple);
-    }
-
-    .color-purple {
-        color: var(--color-purple);
-    }
-
-    .background-color-purple {
-        background-color: var(--color-purple);
-    }
-
-    .border-color-pink {
-        border-color: var(--color-pink);
-    }
-
-    .color-pink {
-        color: var(--color-pink);
-    }
-
-    .background-color-pink {
-        background-color: var(--color-pink);
-    }
+:root {
+    --color-red: oklch(0.692 0.206 29);
+    --color-red-hover: oklch(0.666 0.206 29);
+    --color-orange: oklch(0.727 0.146 45);
+    --color-orange-hover: oklch(0.686 0.146 45);
+    --color-yellow: oklch(0.896 0.095 98.682);
+    --color-yellow-hover: oklch(0.799 0.095 98.682);
+    --color-green: oklch(0.673 0.15 143);
+    --color-green-hover: oklch(0.607 0.15 143);
+    --color-teal: oklch(0.741 0.107 175);
+    --color-teal-hover: oklch(0.704 0.107 175);
+    --color-light-blue: oklch(0.792 0.099 234);
+    --color-light-blue-hover: oklch(0.714 0.099 234);
+    --color-blue: oklch(0.648 0.152 259);
+    --color-blue-hover: oklch(0.549 0.152 259);
+    --color-purple: oklch(0.76 0.084 299);
+    --color-purple-hover: oklch(0.719 0.084 299);
+    --color-pink: oklch(0.737 0.129 13);
+    --color-pink-hover: oklch(0.647 0.129 13);
 }

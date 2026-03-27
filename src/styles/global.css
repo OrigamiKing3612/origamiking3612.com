@@ -1,5 +1,7 @@
-@import "./colors.css";
 @layer variables, reset, base, components, util;
+@import "./colors.css" layer(variables);
+@import "./color-util.css" layer(util);
+@import "./markdown.css" layer(components);
 
 @layer variables {
     :root {
@@ -69,9 +71,13 @@
         text-wrap: pretty;
     }
 
+}
+
+@layer base {
+
     html,
     body {
-        background-color: var(--background-0) !important;
+        background-color: var(--background-0);
         color: var(--text-0);
         font-family: var(--font-dm-sans), sans-serif;
         /* user-select: none; */
@@ -80,9 +86,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-}
 
-@layer base {
     h1,
     h2,
     h3,

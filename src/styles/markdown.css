@@ -1,81 +1,79 @@
-@layer components {
-    .content :where(code):not(:where(pre, h1, h2, h3, h4, h5, h6) code) {
-        display: inline-block;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        margin-left: 0.125rem;
-        margin-right: 0.125rem;
-        border-radius: var(--border-radius);
-        background-color: var(--background-1);
-        vertical-align: baseline;
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-        color: var(--text-0);
-        transition: var(--transitions);
-    }
+.content :where(code):not(:where(pre, h1, h2, h3, h4, h5, h6) code) {
+    display: inline-block;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    border-radius: var(--border-radius);
+    background-color: var(--background-1);
+    vertical-align: baseline;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--text-0);
+    transition: var(--transitions);
+}
 
-    .content :where(pre) code {
-        display: block;
-        background-color: var(--background-1);
-        font-size: 0.875rem;
-        line-height: 1rem;
-        color: var(--text-0);
-        padding: 0.5rem 1rem 1rem 1rem;
-        overscroll-behavior: contain;
-        overscroll-behavior-x: none;
-    }
+.content :where(pre) code {
+    display: block;
+    background-color: var(--background-1);
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: var(--text-0);
+    padding: 0.5rem 1rem 1rem 1rem;
+    overscroll-behavior: contain;
+    overscroll-behavior-x: none;
+}
 
-    .content .expressive-code {
-        margin: 1rem 0;
-        transition: var(--transitions);
-    }
+.content .expressive-code {
+    margin: 1rem 0;
+    transition: var(--transitions);
+}
 
-    .content blockquote {
-        padding: 1rem;
-        border-left: 4px solid var(--color);
-        margin: 0.5rem 0;
-        transition: border-color var(--transition-time) ease;
-    }
+.content blockquote {
+    padding: 1rem;
+    border-left: 4px solid var(--color);
+    margin: 0.5rem 0;
+    transition: border-color var(--transition-time) ease;
+}
 
-    .content li::marker {
-        color: var(--color);
-    }
+.content li::marker {
+    color: var(--color);
+}
 
-    .content h1 {
-        font-size: 25px;
-        text-align: left;
-    }
+.content h1 {
+    font-size: 25px;
+    text-align: left;
+}
 
-    .content h2 {
-        font-size: 23px;
-        text-align: left;
-    }
+.content h2 {
+    font-size: 23px;
+    text-align: left;
+}
 
-    .content h3 {
-        font-size: 18px;
-        text-align: left;
-    }
+.content h3 {
+    font-size: 18px;
+    text-align: left;
+}
 
-    .content h4 {
-        font-size: 13px;
-        text-align: left;
-    }
+.content h4 {
+    font-size: 13px;
+    text-align: left;
+}
 
-    .content h5 {
-        font-size: 10px;
-        text-align: left;
-    }
+.content h5 {
+    font-size: 10px;
+    text-align: left;
+}
 
-    .content h6 {
-        font-size: 8px;
-        text-align: left;
-    }
+.content h6 {
+    font-size: 8px;
+    text-align: left;
+}
 
-    .content a {
-        color: var(--color);
-    }
+.content a {
+    color: var(--color);
+}
 
-    .content a:hover {
-        color: var(--color-hover);
-    }
+.content a:hover {
+    color: var(--color-hover);
 }
