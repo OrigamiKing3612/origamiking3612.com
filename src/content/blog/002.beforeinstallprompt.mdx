@@ -7,13 +7,11 @@ color: yellow
 ---
 
 I found getting the `beforeinstallprompt` event to work a little complicated, so I wanted to share exactly what I did to get it working in [The House App](https://the-house-app.com).
-Before I start, if you are wondering what the `beforeinstallprompt` event is, it’s a browser event that fires when a [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/What_is_a_progressive_web_app) meets certain criteria and is ready to be installed by the user. It allows developers to show a custom "Install App" button and trigger the native install prompt when the user clicks it.
+Before I start, if you are wondering what the `beforeinstallprompt` event is, it’s a browser event that triggers when a [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/What_is_a_progressive_web_app) meets certain criteria and is ready to be installed by the user. It allows developers to show a custom "Install App" button and trigger the native install prompt when the user clicks it.
 
-<br />
 I found [this documentation from
 MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt)
 really helpful while figuring this out.
-<br />
 
 Before I knew this was possible, I had a separate page explaining how to install the app manually. That worked, but it added unnecessary friction and wasn’t a great experience.
 
@@ -21,11 +19,11 @@ Before I knew this was possible, I had a separate page explaining how to install
 
 ## About the problem
 
-I wanted to implement the `beforeinstallprompt` event in [The House App](https://the-house-app.com) to allow users to install it as a PWA, but I ran into some issues getting it to work. The event wasn’t firing, the saved prompt was always `null`, and there were no clear errors to help me debug.
+I wanted to implement the `beforeinstallprompt` event in [The House App](https://the-house-app.com) to allow users to install it as a PWA, but I ran into some issues getting it to work. The event wasn’t triggered, the saved prompt was always `null`, and there were no clear errors to help me debug.
 
 ## What was actually happening
 
-I started with listening for the `beforeinstallprompt` event on the Account page load. But it didn’t work, the event never fired. Eventually after some digging I found this [Stack Overflow thread](https://beta.stackoverflow.com/questions/50762626/pwa-beforeinstallprompt-not-called). The event was always firing but by the time the Vue page was mounted it was too late.
+I started with listening for the `beforeinstallprompt` event on the Account page load. But it didn’t work, the event never triggered. Eventually after some digging I found this [Stack Overflow thread](https://beta.stackoverflow.com/questions/50762626/pwa-beforeinstallprompt-not-called). The event was always triggered but by the time the Vue page was mounted it was too late.
 
 ## My fix
 
