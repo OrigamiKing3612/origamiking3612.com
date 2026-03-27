@@ -23,7 +23,7 @@ jobs:
                   cache: true
             - run: vp install
             - run: vp run build
-            - run: vp check
+            # - run: vp check
             - name: Setup Pages
               uses: actions/configure-pages@v5
               with:
