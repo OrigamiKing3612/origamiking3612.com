@@ -13,17 +13,20 @@ import expressiveCode from "astro-expressive-code";
 export default defineConfig({
     site: "https://origamiking3612.com",
     output: "static",
-    integrations: [solidJs(), sitemap(),
-    expressiveCode({
-        themes: ['catppuccin-latte', 'catppuccin-mocha'],
-        useDarkModeMediaQuery: false,
-        themeCssSelector: (theme) => {
-            return theme.name === 'catppuccin-latte' ? ':root' : ':root.dark'
-        }
-    }),
-    mdx({
-        optimize: false, // allow for custom components https://github.com/withastro/astro/issues/14611
-    })],
+    integrations: [
+        solidJs(),
+        sitemap(),
+        expressiveCode({
+            themes: ["catppuccin-latte", "catppuccin-mocha"],
+            useDarkModeMediaQuery: false,
+            themeCssSelector: (theme) => {
+                return theme.name === "catppuccin-latte" ? ":root" : ":root.dark";
+            },
+        }),
+        mdx({
+            optimize: false, // allow for custom components https://github.com/withastro/astro/issues/14611
+        }),
+    ],
     experimental: {
         contentIntellisense: true,
         rustCompiler: true,
@@ -48,6 +51,6 @@ export default defineConfig({
     markdown: {
         shikiConfig: {
             theme: "github-dark",
-        }
-    }
+        },
+    },
 });

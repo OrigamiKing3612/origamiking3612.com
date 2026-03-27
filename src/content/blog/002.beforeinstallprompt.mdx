@@ -10,7 +10,9 @@ I found getting the `beforeinstallprompt` event to work a little complicated, so
 Before I start, if you are wondering what the `beforeinstallprompt` event is, it’s a browser event that fires when a [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/What_is_a_progressive_web_app) meets certain criteria and is ready to be installed by the user. It allows developers to show a custom "Install App" button and trigger the native install prompt when the user clicks it.
 
 <br />
-I found [this documentation from MDN ](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt) really helpful while figuring this out.
+I found [this documentation from
+MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt)
+really helpful while figuring this out.
 <br />
 
 Before I knew this was possible, I had a separate page explaining how to install the app manually. That worked, but it added unnecessary friction and wasn’t a great experience.
@@ -18,22 +20,25 @@ Before I knew this was possible, I had a separate page explaining how to install
 > **Note:** This API currently only works in Chromium-based browsers as of the publish of this post.
 
 ## About the problem
+
 I wanted to implement the `beforeinstallprompt` event in [The House App](https://the-house-app.com) to allow users to install it as a PWA, but I ran into some issues getting it to work. The event wasn’t firing, the saved prompt was always `null`, and there were no clear errors to help me debug.
 
 ## What was actually happening
+
 I started with listening for the `beforeinstallprompt` event on the Account page load. But it didn’t work, the event never fired. Eventually after some digging I found this [Stack Overflow thread](https://beta.stackoverflow.com/questions/50762626/pwa-beforeinstallprompt-not-called). The event was always firing but by the time the Vue page was mounted it was too late.
 
 ## My fix
+
 I made this `install-pwa.js` script to get the prompt and store it before Vue loaded.
 
 ```javascript
 // install-pwa.js
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     window.pwaDeferredPrompt = e;
 });
 
-window.addEventListener('appinstalled', () => {
+window.addEventListener("appinstalled", () => {
     window.pwaDeferredPrompt = null;
 });
 ```
@@ -59,13 +64,14 @@ export default defineNuxtConfig({
 This script listens for the `beforeinstallprompt` event and stores it in a global variable `window.pwaDeferredPrompt`. It also listens for the `appinstalled` event to clear the stored prompt when the app is installed. This way, when my Vue component mounts, it can check if the prompt is available and show the install button.
 
 ## Using it in Vue
+
 Now that the event is stored globally, the Vue app can safely access it. Here’s the composable I ended up with:
 
 ```typescript
 export const usePromptInstallApp = () => {
     const event = computed<BeforeInstallPromptEvent | null>(() => window.pwaDeferredPrompt);
     const isSupported = computed<boolean>(() => {
-        return "BeforeInstallPromptEvent" in window && event.value != null
+        return "BeforeInstallPromptEvent" in window && event.value != null;
     });
 
     const handleButtonClick = async () => {

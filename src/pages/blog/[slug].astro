@@ -24,7 +24,10 @@ import "~/styles/markdown.css";
 const color = post.data.color;
 ---
 
-<MainLayout title={`${post.data.title} - OrigamiKing3612`}>
+<MainLayout
+    title={`${post.data.title} - OrigamiKing3612`}
+    description={post.data.description}
+>
     <link
         slot="head"
         rel="alternate"
