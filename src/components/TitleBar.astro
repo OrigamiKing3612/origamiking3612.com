@@ -5,6 +5,7 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
 <header id="header">
     <nav>
         <a href="/" id="home-link">Home</a>
+        <a href="/about" id="about-link">About</a>
         <a href="/blog" id="blog-link">Blog</a>
     </nav>
 
@@ -15,6 +16,7 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
     const currentPath = window.location.pathname;
     const idMap = {
         "/": "home-link",
+        "/about": "about-link",
         "/blog": "blog-link",
     } as const;
     type Path = keyof typeof idMap;
@@ -51,6 +53,10 @@ import { SwitchThemesButton } from "@/SwitchThemesButton/SwitchThemesButton.tsx"
 
     #home-link[active] {
         color: var(--color-yellow);
+    }
+
+    #about-link[active] {
+        color: var(--color-teal);
     }
 
     #blog-link[active] {
