@@ -17,11 +17,11 @@
         "@astrojs/rss": "4.0.18",
         "@astrojs/sitemap": "3.7.2",
         "@astrojs/solid-js": "^6.0.1",
-        "@lucide/astro": "^1.0.1",
-        "astro": "^6.1.0",
+        "@lucide/astro": "^1.8.0",
+        "astro": "^6.1.6",
         "astro-expressive-code": "^0.41.7",
-        "lucide-solid": "^1.0.1",
-        "solid-js": "^1.9.11"
+        "lucide-solid": "^1.8.0",
+        "solid-js": "^1.9.12"
     },
     "devDependencies": {
         "prettier": "3.8.1",
