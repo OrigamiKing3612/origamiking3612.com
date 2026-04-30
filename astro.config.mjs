@@ -29,7 +29,6 @@ export default defineConfig({
     ],
     experimental: {
         contentIntellisense: true,
-        rustCompiler: true,
     },
     prefetch: true,
     fonts: [
