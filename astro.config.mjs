@@ -1,13 +1,9 @@
 // @ts-check
 
 import { defineConfig, fontProviders } from "astro/config";
-
 import sitemap from "@astrojs/sitemap";
-
 import mdx from "@astrojs/mdx";
-
 import solidJs from "@astrojs/solid-js";
-
 import expressiveCode from "astro-expressive-code";
 
 export default defineConfig({
@@ -23,9 +19,7 @@ export default defineConfig({
                 return theme.name === "catppuccin-latte" ? ":root" : ":root.dark";
             },
         }),
-        mdx({
-            optimize: false, // allow for custom components https://github.com/withastro/astro/issues/14611
-        }),
+        mdx(),
     ],
     experimental: {
         contentIntellisense: true,
