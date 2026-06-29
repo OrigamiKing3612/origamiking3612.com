@@ -33,13 +33,6 @@ export default defineConfig({
             weights: [400, 500, 600, 700, 800],
             styles: ["normal"],
         },
-        {
-            name: "DM Sans",
-            provider: fontProviders.google(),
-            cssVariable: "--font-dm-sans",
-            weights: [400, 500, 600, 700, 800],
-            styles: ["normal"],
-        },
     ],
     markdown: {
         shikiConfig: {
