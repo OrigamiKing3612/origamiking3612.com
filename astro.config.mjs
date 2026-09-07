@@ -15,9 +15,8 @@ export default defineConfig({
         expressiveCode({
             themes: ["catppuccin-latte", "catppuccin-mocha"],
             useDarkModeMediaQuery: false,
-            themeCssSelector: (theme) => {
-                return theme.name === "catppuccin-latte" ? ":root" : ":root.dark";
-            },
+            themeCssSelector: (theme) =>
+                theme.name === "catppuccin-latte" ? ":root" : ":root.dark",
         }),
         mdx(),
     ],
@@ -25,6 +24,7 @@ export default defineConfig({
         contentIntellisense: true,
     },
     prefetch: true,
+    session: false,
     fonts: [
         {
             name: "Handlee",
