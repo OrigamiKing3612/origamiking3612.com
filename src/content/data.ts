@@ -1,6 +1,8 @@
 import type { Project } from "./types";
 import theHouseAppLight from "../assets/images/the-house-app/light.png";
 import theHouseAppDark from "../assets/images/the-house-app/dark.png";
+import theSignupsAppLight from "../assets/images/the-signups-app/light.png";
+import theSignupsAppDark from "../assets/images/the-signups-app/dark.png";
 import terminalKingdom from "../assets/images/terminal-kingdom.png";
 
 export const gravatarUrl = `https://www.gravatar.com/avatar/fcea678228cec5ddcfe7deb46411693d?s=160&d=identicon`;
@@ -24,6 +26,16 @@ export const projects: Project[] = [
         images: {
             light: theHouseAppLight,
             dark: theHouseAppDark,
+        },
+    },
+    {
+        name: "The Signups App",
+        link: "https://origamisystems.org/signups",
+        description:
+            "Collect signups for events, shifts, and volunteer work without the spreadsheet. Set it up in minutes and share one link.",
+        images: {
+            light: theSignupsAppLight,
+            dark: theSignupsAppDark,
         },
     },
     {
